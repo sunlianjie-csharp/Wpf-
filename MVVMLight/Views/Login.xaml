@@ -1,0 +1,71 @@
+﻿<Window x:Class="MVVMLight.Views.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMLight.Views"
+        xmlns:helper="clr-namespace:MVVMLigtDemo.Helper"
+        mc:Ignorable="d"
+        DataContext="{Binding Source={StaticResource Locator},Path=Login}"
+        Title="Login" Height="450" Width="800">
+    
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+            <WrapPanel
+          Grid.Row="0"
+          Margin="0,5"
+          HorizontalAlignment="Center">
+                <TextBlock
+              FontSize="18"
+              FontWeight="Bold"
+              Text="XXXX系统" />
+            </WrapPanel>
+
+            <WrapPanel Grid.Row="1">
+
+                <Label Margin="0,5" Content="账号：" />
+
+                <TextBox
+              Name="txtAccount"
+              Width="150"
+              Height="30"
+              Padding="10,0"
+              VerticalContentAlignment="Center"
+              Text="{Binding Account}" />
+            </WrapPanel>
+
+            <WrapPanel Grid.Row="2">
+                <Label Margin="0,5" Content="密码：" />
+
+                <!--
+              helper:PasswordBoxHelper.Attach="True"
+              helper:PasswordBoxHelper.Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+          -->
+                <PasswordBox
+              Name="txtPassword"
+              Width="150"
+              Height="30"
+              Padding="10,0"
+              VerticalContentAlignment="Center"
+              helper:PasswordBoxHelper.Attach="True"
+              helper:PasswordBoxHelper.Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            </WrapPanel>
+            <!--  IsDefault="True" 设置默认按钮  敲回车 就可以触发 相当于点击了button  -->
+            <WrapPanel Grid.Row="3" HorizontalAlignment="Center">
+                <Button
+              Width="100"
+              Height="30"
+              Command="{Binding LoginCommand}"
+              Content="登录"
+              IsDefault="True" />
+            </WrapPanel>
+            <!--  CommandParameter="{Binding ElementName=txtPassword, Path=Password}"  -->
+        </Grid>
+</Window>

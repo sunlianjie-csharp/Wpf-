@@ -1,0 +1,48 @@
+﻿<Window x:Class="区域和导航.Views.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:区域和导航.Views"
+        mc:Ignorable="d"
+        xmlns:prism="http://prismlibrary.com/"
+        Title="Main" Height="450" Width="800"
+        prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" BorderBrush="Red" BorderThickness="3">
+            <WrapPanel VerticalAlignment="Center">
+                <TextBlock Text="xxxxx系统"></TextBlock>
+                <Button Content="后退" Command="{Binding BackCommand}"></Button>
+                <Button Content="前进" Command="{Binding ForwardCommand}"></Button>
+                <Button Content="清空" Command="{Binding ClearCommand}"></Button>
+            </WrapPanel>
+        </Border>
+        <Border Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" BorderThickness="3" BorderBrush="Green">
+                    <StackPanel>
+                        <Button Width="100" Height="30" Content="ViewA" Command="{Binding OpenCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"></Button>
+                        <Button Width="100" Height="30" Content="ViewB" Command="{Binding OpenCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"></Button>
+                        <Button Width="100" Height="30" Content="ViewC" Command="{Binding OpenCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"></Button>
+                    </StackPanel>
+                </Border>
+                <Border BorderBrush="Yellow" BorderThickness="3" Grid.Column="1">
+                    <!--prism:RegionManager.RegionName="ContentRegion" 区域管理对象，可以在viewmodel里根据
+                 区域名称找到区域、设置区域显示不同视图-->
+                    <ContentControl prism:RegionManager.RegionName="ContentRegion">
+
+                    </ContentControl>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+
+</Window>

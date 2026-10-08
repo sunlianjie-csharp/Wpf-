@@ -1,0 +1,36 @@
+﻿<Window x:Class="templatePack空白项目.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="350" Width="525" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="red" BorderThickness="3"  >
+            <ContentControl   prism:RegionManager.RegionName="HeaderRegion"></ContentControl>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!--俩个按钮 界面1 界面2-->
+            <Border Grid.Column="0" BorderBrush="Yellow" BorderThickness="3" >
+                <ContentControl  prism:RegionManager.RegionName="LeftRegion"></ContentControl>
+            </Border>
+
+
+            <!--ContentRegion 至少有俩个界面-->
+            <Border Grid.Column="1" BorderBrush="Green" BorderThickness="3" >
+
+                <ContentControl  prism:RegionManager.RegionName="ContentRegion"></ContentControl>
+            </Border>
+        </Grid>
+
+
+    </Grid>
+</Window>

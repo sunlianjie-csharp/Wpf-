@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="CommunityToolKit/CommunityToolKit.csproj" Id="263e94dc-3500-420e-8dea-bce0ae7e1f99" />
+  <Project Path="MVVMLight/MVVMLight.csproj" Id="10f8653e-d4a9-46d6-92f3-f8e82c954ba9" />
+  <Project Path="Prism/Prism.csproj" Id="74fcbeb1-6c8b-4306-a9d2-7cab49c0d4fa" />
+  <Project Path="Prism手写/Prism手写.csproj" Id="6ba24260-6106-4b20-b12f-b52357b8c816" />
+  <Project Path="templatePack空白项目/templatePack空白项目.csproj" Id="60d8a1b2-68d1-4afe-b653-6c5285c8375e" />
+  <Project Path="区域和导航/区域和导航.csproj" Id="2bca5ede-4c97-457f-9b14-8b474d809fe1" />
+  <Project Path="原生成器/原生成器.csproj" Id="2ee8f9b2-1586-4d2b-aa49-c66efaa11d49" />
+</Solution>
